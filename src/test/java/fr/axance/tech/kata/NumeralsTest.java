@@ -149,4 +149,64 @@ public class NumeralsTest {
         //then
         assertThat(result).isEqualTo(9);
     }
+
+    @Test
+    public void should_add_50_when_L() {
+        //Given
+        String input = "L";
+
+        //When
+        int result = NumeralsService.transform(input);
+
+        //then
+        assertThat(result).isEqualTo(50);
+    }
+
+    @Test
+    public void should_add_67_when_LXVII() {
+        //Given
+        String input = "LXVII";
+
+        //When
+        int result = NumeralsService.transform(input);
+
+        //then
+        assertThat(result).isEqualTo(67);
+    }
+
+    @Test
+    public void should_add_69_when_LXIX() {
+        //Given
+        String input = "LXIX";
+
+        //When
+        int result = NumeralsService.transform(input);
+
+        //then
+        assertThat(result).isEqualTo(69);
+    }
+
+    @Test
+    public void should_add_48_when_XLVIII() {
+        //Given
+        String input = "XLVIII";
+
+        //When
+        int result = NumeralsService.transform(input);
+
+        //then
+        assertThat(result).isEqualTo(48);
+    }
+
+    @Test
+    public void should_add_49_when_XLIX() {
+        //Given
+        String input = "XLIX";
+
+        //When
+        int result = NumeralsService.transform(input);
+
+        //then
+        assertThat(result).isEqualTo(49);
+    }
 }
