@@ -209,4 +209,13 @@ public class NumeralsTest {
         //then
         assertThat(result).isEqualTo(49);
     }
+
+    @Test(expected = NumberFormatException.class)
+    public void should_reject_VX() {
+        //Given
+        String input = "VX";
+
+        //When
+        NumeralsService.transform(input);
+    }
 }

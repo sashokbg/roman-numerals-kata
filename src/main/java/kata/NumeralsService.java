@@ -22,6 +22,8 @@ public class NumeralsService {
             } else if (character == 'X') {
                 if (previousCharacter == 'I') {
                     result-=2;
+                } else if (previousCharacter == 'V') {
+                    throw new NumberFormatException("Badly formatted roman numeral");
                 }
                 result+=10;
             }  else if (character == 'L') {
