@@ -31,7 +31,7 @@ public class NumeralsTest {
         assertThat(result).isEqualTo(2);
     }
 
-    @Test(expected = NumberFormatException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void should_fail_when_input_is_not_formatted() {
         //Given
         String input = "IIa";

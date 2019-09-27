@@ -1,5 +1,7 @@
 package kata;
 
+import static kata.RomanDigit.I;
+
 public class NumeralsService {
     public static int transform(String input) {
 
@@ -12,29 +14,34 @@ public class NumeralsService {
         char previousCharacter = '\0';
 
         for (char character : input.toCharArray()) {
-            if (character == 'I') {
-                result++;
-            } else if (character == 'V') {
-                if (previousCharacter == 'I') {
-                    result-=2;
-                }
-                result+=5;
-            } else if (character == 'X') {
-                if (previousCharacter == 'I') {
-                    result-=2;
-                } else if (previousCharacter == 'V') {
-                    throw new NumberFormatException("Badly formatted roman numeral");
-                }
-                result+=10;
-            }  else if (character == 'L') {
-                result+=50;
-                if (previousCharacter == 'X') {
-                    result-=20;
-                }
+            RomanDigit digit = RomanDigit.valueOf(String.valueOf(character));
+
+            switch (digit) {
+                case I:
+                    result++;
+                    break;
+                case V:
+                    if (previousCharacter == 'I') {
+                        result-=2;
+                    }
+                    result+=5;
+                    break;
+                case X:
+                    if (previousCharacter == 'I') {
+                        result-=2;
+                    } else if (previousCharacter == 'V') {
+                        throw new NumberFormatException("Badly formatted roman numeral");
+                    }
+                    result+=10;
+                    break;
+                case L:
+                    result+=50;
+                    if (previousCharacter == 'X') {
+                        result-=20;
+                    };
+                    break;
             }
-            else {
-                throw new NumberFormatException("Badly formatted roman numeral");
-            }
+
             previousCharacter = character;
         }
 
