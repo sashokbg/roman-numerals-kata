@@ -12,7 +12,10 @@ public class NumeralsService {
         for (char character : input.toCharArray()) {
             if (character == 'I') {
                 result++;
-            } else {
+            } else if (character == 'V') {
+                result+=5;
+            }
+            else {
                 throw new NumberFormatException("Badly formatted roman numeral");
             }
         }

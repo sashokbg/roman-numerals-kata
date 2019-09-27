@@ -54,4 +54,39 @@ public class NumeralsTest {
         assertThat(result).isEqualTo(0);
     }
 
+    @Test
+    public void should_add_five_when_V () {
+        //Given
+        String input = "V";
+
+        //When
+        int result = NumeralsService.transform(input);
+
+        //then
+        assertThat(result).isEqualTo(5);
+    }
+
+    @Test
+    public void should_add_five_and_one_when_VI () {
+        //Given
+        String input = "VI";
+
+        //When
+        int result = NumeralsService.transform(input);
+
+        //then
+        assertThat(result).isEqualTo(6);
+    }
+
+    @Test
+    public void should_subtract_one_from_five_when_IV () {
+        //Given
+        String input = "IV";
+
+        //When
+        int result = NumeralsService.transform(input);
+
+        //then
+        assertThat(result).isEqualTo(4);
+    }
 }
