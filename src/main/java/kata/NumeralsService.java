@@ -19,6 +19,11 @@ public class NumeralsService {
                     result-=2;
                 }
                 result+=5;
+            } else if (character == 'X') {
+                if (previousCharacter == 'I') {
+                    result-=2;
+                }
+                result+=10;
             }
             else {
                 throw new NumberFormatException("Badly formatted roman numeral");

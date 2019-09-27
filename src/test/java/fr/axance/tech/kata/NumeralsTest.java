@@ -89,4 +89,64 @@ public class NumeralsTest {
         //then
         assertThat(result).isEqualTo(4);
     }
+
+    @Test
+    public void should_add_10_when_X() {
+        //Given
+        String input = "X";
+
+        //When
+        int result = NumeralsService.transform(input);
+
+        //then
+        assertThat(result).isEqualTo(10);
+    }
+
+    @Test
+    public void should_add_11_when_XI() {
+        //Given
+        String input = "XI";
+
+        //When
+        int result = NumeralsService.transform(input);
+
+        //then
+        assertThat(result).isEqualTo(11);
+    }
+
+    @Test
+    public void should_add_15_when_XV() {
+        //Given
+        String input = "XV";
+
+        //When
+        int result = NumeralsService.transform(input);
+
+        //then
+        assertThat(result).isEqualTo(15);
+    }
+
+    @Test
+    public void should_add_16_when_XVI() {
+        //Given
+        String input = "XVI";
+
+        //When
+        int result = NumeralsService.transform(input);
+
+        //then
+        assertThat(result).isEqualTo(16);
+    }
+
+    @Test
+    public void should_add_9_when_IX() {
+        //Given
+        String input = "IX";
+
+        //When
+        int result = NumeralsService.transform(input);
+
+        //then
+        assertThat(result).isEqualTo(9);
+    }
 }
